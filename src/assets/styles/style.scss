@@ -1,0 +1,79 @@
+@use "mixins" as m;
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: $font-family-sans-serif;
+  font-size: 1.1rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-family-sans-serif;
+}
+
+h1 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bolder;
+}
+
+h3 {
+  margin-top: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+main {
+  flex: 1;
+}
+
+.logo {
+  max-width: 100px;
+}
+
+.image--fluid {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ulist {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  &__element {
+    flex-shrink: 0;
+    align-self: flex-start;
+    list-style: none;
+    @include m.hover-style;
+  }
+
+  &__link {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+  }
+}
+
+form {
+  input,
+  textarea {
+    &:focus {
+      &:valid {
+        background-color: rgb(141 255 255);
+      }
+
+      &:invalid {
+        background-color: rgb(246 125 125);
+      }
+    }
+  }
+}

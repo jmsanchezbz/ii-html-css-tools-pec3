@@ -1,0 +1,120 @@
+.card-container {
+    container-type: inline-size;
+    width: 100%;
+    border: 5px solid black;
+  }
+  
+  .card {
+    border: 5px solid grey;
+    container-type: normal;
+  }
+  
+  .card-header {
+    background-color: lightblue;
+  }
+  
+  .card-body {
+    background-color: darkblue;
+  }
+  
+  .card-footer {
+    background-color: blue;
+  }
+  
+  @container (min-width: 1000px) {
+  
+    .card {
+      background-color: lightyellow;
+    }
+  
+    .card-header {
+      background-color: lightgreen;
+    }
+    .card-body {
+      background-color: darkgreen;
+    }
+    .card-footer {
+      background-color: green;
+    }
+  }
+  
+  /*colors*/
+  .lch {
+      min-height: 10vh;
+      background: linear-gradient(
+          to right,
+          lch(50% 100 200),
+          lch(50% 100 0)
+      );
+  }
+  
+  .hsl {
+      min-height: 10vh;
+      background: linear-gradient(
+          to right,
+          hsl(188 100% 34%),
+          hsl(331 100% 50%)
+      );
+  }
+  
+  .rgb {
+      min-height: 10vh;
+      background: linear-gradient(
+          to right,
+          color(display-p3 0 0.5188 0.631),
+          color(display-p3 0.8596 0 0.4786)
+      );
+  }
+  
+  /*relative color syntax*/
+  .relColSyn {
+      background: hsl(from #f06d06 h calc(s + 20%) l / 0.5);
+  }
+  
+  /*
+  
+  */
+  
+  @layer defaults, components, utilities;
+  
+  @layer defaults {
+    a:is(:link, :visited) {
+      /* low-priority layers are easy to override by default */
+      color: mediumvioletred;
+  
+      /* but take priority with importance */
+      text-decoration: underline !important;
+    }
+  }
+  
+  @layer utilities {
+    /* high-priority layers win by default */
+    .maroon {
+      color: maroon;
+    }
+  }
+  
+  @layer components {
+    #call-to-action {
+      /* higher layers have lower priority with important styles */
+      text-decoration: none !important;
+      color: rebeccapurple;
+      font-size: 3em;
+      display: inline-block;
+      border: medium solid;
+      padding: 0.25em 0.5em;
+      border-radius: 0.25em;
+    }
+  }
+  
+  /* page layout */
+  html {
+    height: 100%;
+  }
+  
+  body {
+    display: grid;
+    min-height: 100%;
+    place-content: center;
+    padding: 1em;
+  }

@@ -1,0 +1,6 @@
+@use "sass:color";
+@use "sass:string";
+
+@function generate-shade($base-color, $percentage) {
+  @return mix(white, $base-color, $percentage);
+}
