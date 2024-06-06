@@ -1,5 +1,13 @@
 @use "mixins" as m;
 
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -39,9 +47,10 @@ main {
 }
 
 .image--fluid {
-  display: block;
+  @apply block w-full h-auto;
+  /*display: block;
   width: 100%;
-  height: auto;
+  height: auto;*/
 }
 
 .ulist {

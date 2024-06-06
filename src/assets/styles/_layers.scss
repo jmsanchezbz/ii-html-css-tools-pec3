@@ -15,13 +15,6 @@
 }
 
 @layer components {
-  .carousel {
-    container-type: inline-size;
-  }
-
-  .carousel-caption {
-    background-color: hsl(0 0% 94% / 0.7);
-  }
 
   .btn-custom {
     padding: 5px;
@@ -47,13 +40,6 @@
     --bs-btn-active-border-color: $light-font-color;
 
 
-  }
-
-  .my-form {
-    padding: 20px;
-    background-color: rgb(230 230 230);
-    border: 1px solid lightgray;
-    border-radius: 5px;
   }
 }
 
