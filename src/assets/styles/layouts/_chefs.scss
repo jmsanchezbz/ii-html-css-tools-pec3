@@ -1,64 +1,80 @@
 body:has(a[href*="chefs.html"]):has(.chef) {
   .ulist__element a[href*="chefs.html"] {
-      border-bottom: 1px solid rgba(var(--bs-link-color-rgb));
+    border-bottom: 1px solid rgba(var(--bs-link-color-rgb));
   }
 }
 
-.chef {
-  display: flex;
+/*display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  text-align: center;*/
+
+.chef {
+  @apply flex flex-col justify-center text-center;
+
+  h5 {
+    @apply font-medium;
+  }
+
+  &.container {
+    width: 546px;
+    @media (min-width: 768px) {
+      width: 720px;
+    }
+    @media (min-width: 992px) {
+      width: 960px;
+    }
+    @media (min-width: 1200px) {
+      width: 1140px;
+    }
+    @media (min-width: 1400px) {
+      width: 1320px;
+    }
+  }
 
   .flex-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
+    @apply flex flex-col flex-wrap justify-center;
 
     .my-card {
-      flex-shrink: 0;
-      width: 90%;
-      height: 400px;
-      margin: 20px;
-      box-shadow: 0 2px 5px rgba(0 0 0 / 0.1);
+      @apply shrink-0 w-11/12 h-full m-7 shadow-sm shadow-gray-900;
 
       &__image {
-        height:300px;
-          object-fit: cover;
-          object-position: top;
+        @apply object-cover object-top w-full h-80;
+        /*height: 300px;*/
       }
-      
+
       &__body {
-          height: 240px;
-          background-color: rgb(240 240 240);
+        @apply bg-gray-100 p-4 h-60;
       }
     }
   }
 
   .my-article {
+    @apply rounded;
     container-type: inline-size;
 
     &:hover {
-      border-color: generate-shade($bg-accent-color,90%);
-      border-width: 3px;
+      @apply shadow-md border-2 border-stone-300;
+      /*border-color: generate-shade($bg-accent-color, 90%);
+      border-width: 3px;*/
     }
   }
 
-  @container (min-width: #{$container-width}){
+  /*font-size: 2rem;*/ /*
+  @container (min-width: #{$container-width}) {
     article h5 {
-      font-size: 2rem;
+      @apply text-2xl;
     }
-  }
+  }*/
 
   @media (min-width: $tabletMinWidth) {
     .flex-container {
-      flex-direction: row;
+      @apply flex-row flex flex-wrap justify-center;
 
       .my-card {
-        width: 40%;
-        height: 400px;
-        margin: 20px;
+        @apply w-2/5 m-5 h-full;
+        /*height: 400px;
+        margin: 20px;*/
       }
     }
   }
@@ -66,9 +82,9 @@ body:has(a[href*="chefs.html"]):has(.chef) {
   @media (min-width: $desktopMinWidth) {
     .flex-container {
       .my-card {
+        @apply m-5 w-1/4 h-full;
+        /*height: 400px;*/
         width: 30%;
-        height: 400px;
-        margin: 20px;
       }
     }
   }
