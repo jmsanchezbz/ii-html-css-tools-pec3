@@ -5,33 +5,17 @@ body:has(a[href*="chefs.html"]):has(.chef) {
 }
 
 .chef {
-  @apply flex flex-col justify-center text-center;
+  @apply flex flex-col justify-center text-center w-11/12;
 
   h5 {
     @apply font-medium;
-  }
-
-  &.container {
-    width: 546px;
-    @media (min-width: 768px) {
-      width: 720px;
-    }
-    @media (min-width: 992px) {
-      width: 960px;
-    }
-    @media (min-width: 1200px) {
-      width: 1140px;
-    }
-    @media (min-width: 1400px) {
-      width: 1320px;
-    }
   }
 
   .flex-container {
     @apply flex flex-col flex-wrap justify-center;
 
     .my-card {
-      @apply shrink-0 w-11/12 h-full m-7 shadow-sm shadow-gray-900;
+      @apply shrink-0 h-full m-7 shadow-sm shadow-gray-900;
 
       &__image {
         @apply object-cover object-top w-full h-80;
