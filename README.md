@@ -66,3 +66,12 @@ Always run the following commands during the development stage and for productio
 Feel free to create a [new issue](https://github.com/uoc-advanced-html-css/uoc-boilerplate/issues/new/) or drop me a line at jorditarrida@uoc.edu.
 
 Are you using this Boilerplate for your projects or for educational purposes? I would love to hear about it!
+
+## AI Generated page with chat GPT
+
+PROMPT: Generate a web page with html and css separeated about a Cooking contest 2024 edition formed by the following elements:
+- A header with two sides, left one with title Cooking contest 2024 edition, and right side with a menu with home, the contest, recipes and Contestants element where Contestants is the active item with a button like with black background, white letters and rounded corners.
+- A footer with two sides as well, left side has a title Cooking contest 2024 edition with social networks icons (facebook, linkedin, youtube and instagram) links under it. The right side has a three column menus with Recipes(Cajun seafood pasta, cedar planked salmon, poulet au vinagre), Contestants (John Cooper, Marta Alonso and Mary Ann Stones) and Contest editions (2024, 2023 and 2022). Footer has a border top solid 1px grey.
+- A main content with an h1 ‘Contestants’ with text under ‘This section describes the recipes of the best contestans’. Under that an image with food chef preparation full width with rounded borders and margins on both sides. Under the image there is an h2 with ‘The recipes’ and under the text ‘These are the recipes of the best contestatnts’. Below that there are three cards with the name of the recipe at the top, below an image of the chef with clip-shape circle at the left and the name of the chef and under a critic of the recipe.
+
+Titles and h1.. are black and text is grey, as well as social network icons
