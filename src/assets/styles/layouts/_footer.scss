@@ -1,50 +1,39 @@
 .footer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  padding-top: 1rem;
-  margin-bottom: 1rem;
+  @apply flex flex-col gap-4 items-center justify-center border-t mx-auto pt-4 mb-4;
 
   &__right {
     .ulist {
-      flex-direction: row;
+      @apply flex-row;
 
       &__element {
         &:hover {
-          border: none;
+          @apply border-none;
         }
       }
     }
   }
 
   &__left {
+
     .logo {
-      width: 30svw;
+      width: 30svw; //no se ha encontrado alternativa tailwindcss
       max-width: 30svw;
     }
 
     &--title {
-      display: none;
+      @apply hidden; //display: none;
     }
   }
 
   @media (min-width: $tabletMinWidth) {
-    display: grid;
+    @apply grid gap-2.5 justify-center;
     grid-template-columns: 1fr 2fr 1fr;
-    gap: 10px;
-    justify-items: center;
 
     &__left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
+      @apply flex flex-row justify-center items-center gap-4 text-center;
 
       .logo {
-        width: 100px;
-        max-width: 100px;
+        @apply w-24 max-w-24; //96px, aprox 100px
       }
 
       &--title {
@@ -54,15 +43,13 @@
 
     &__center {
       .ulist {
-        flex-direction: row;
-        justify-content: flex-end;
+        @apply flex-row justify-center;
       }
     }
 
     &__right {
       .ulist {
-        flex-direction: row;
-        justify-content: flex-end;
+        @apply flex-row justify-end;
       }
     }
   }
