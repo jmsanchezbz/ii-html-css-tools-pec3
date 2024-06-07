@@ -1,19 +1,8 @@
 @use "mixins" as m;
 
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  @apply flex flex-col text-lg min-h-screen;
   font-family: $font-family-sans-serif;
-  font-size: 1.1rem;
 }
 
 h1,
@@ -23,66 +12,56 @@ h3 {
 }
 
 h1 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  @apply text-5xl font-medium mt-8 mb-8;
 }
 
 h2 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-weight: bolder;
+  @apply mt-8 mb-8 font-bold;
 }
 
 h3 {
-  margin-top: 1.8rem;
-  margin-bottom: 1rem;
+  @apply mt-7 mb-7;
 }
 
 main {
-  flex: 1;
+  @apply flex-1;
+}
+
+/* Conversión manual de la clase container de bootstrap */
+.container {
+  width: w-full;
+
+  @media (min-width: 768px) {
+    width: 720px;
+  }
+  @media (min-width: 992px) {
+    width: 960px;
+  }
+  @media (min-width: 1200px) {
+    width: 1140px;
+  }
+  @media (min-width: 1400px) {
+    width: 1320px;
+  }
 }
 
 .logo {
-  max-width: 100px;
+  @apply max-w-24; //aprox 100px
 }
 
 .image--fluid {
   @apply block w-full h-auto;
-  /*display: block;
-  width: 100%;
-  height: auto;*/
 }
 
 .ulist {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
+  @apply flex flex-col p-0;
 
   &__element {
-    flex-shrink: 0;
-    align-self: flex-start;
-    list-style: none;
+    @apply shrink-0 list-none self-start;
     @include m.hover-style;
   }
 
   &__link {
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-  }
-}
-
-form {
-  input,
-  textarea {
-    &:focus {
-      &:valid {
-        background-color: rgb(141 255 255);
-      }
-
-      &:invalid {
-        background-color: rgb(246 125 125);
-      }
-    }
+    @apply block no-underline px-2 py-4 text-blue-600; //text-blue-600 rgb(13, 110, 253)
   }
 }

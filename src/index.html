@@ -12,40 +12,40 @@
 
 <body class="index">
   <include src="./views/header.html"></include>
-  <main>
+  <main class="bg-center bg-black bg-cover">
     <div class="home">
       <section>
-        <ul class="grid flex-container">
-          <li class="title flex-row__center"> 
-            <h2>Concurso Top Chef 2024</h2>
+        <ul class="my-grid px-8">
+          <li class="title">
+            <h1>Concurso Top Chef 2024</h1>
           </li>
-          <li class="first-prize flex-row">
-            <div class="flex-row__left">
-              <div class="my-card">
-                <h3>First prize</h3>
-                <p>It will be for the chef who prepares a menu composed of the three dishes that receive the greatest
-                  score of all attendees.</p>
-                <h5>Prize 10.000€</h5>
-              </div>
-            </div>
+          <li class="first-prize">
+            <include src="./components/prize-card.html">
+              {
+              "title":"First prize",
+              "description":"It will be for the chef who prepares a menu composed of the three dishes that receive the
+              greatest score of all attendees.",
+              "prize":"Prize 10.000€"
+              }
+            </include>
           </li>
-          <li class="second-prize flex-row">
-            <div class="flex-row__right">
-              <div class="my-card">
-                <h3>Second prize</h3>
-                <p>It will be for the one who obtains the second best score on the menu from the attendees.</p>
-                <h5>Prize 5.000€</h5>
-              </div>
-            </div>
+          <li class="second-prize">
+            <include src="./components/prize-card.html">
+              {
+              "title":"Second prize",
+              "description":"It will be for the one who obtains the second best score on the menu from the attendees.",
+              "prize":"Prize 5.000€"
+              }
+            </include>
           </li>
-          <li class="third-prize flex-row">
-            <div class="flex-row__left">
-              <div class="my-card">
-                <h3>Third prize</h3>
-                <p>It will go to the person who gets the best score in the dessert.</p>
-                <h5>Prize 1.000€</h5>
-              </div>
-            </div>
+          <li class="third-prize">
+            <include src="./components/prize-card.html">
+              {
+              "title":"Third prize",
+              "description":"It will go to the person who gets the best score in the dessert.",
+              "prize":"Prize 1.000€"
+              }
+            </include>
           </li>
         </ul>
       </section>

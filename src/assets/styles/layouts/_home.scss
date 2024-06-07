@@ -6,19 +6,21 @@ body:has(a[href*="/"]):has(.home) {
 
 .index {
   header {
-    color: white;
-    background-color: black;
-
-    &.border-bottom {
-      border-bottom: none !important;
-    }
+    @apply text-white bg-black border-none;
   }
 
   h1,
   h2,
   h3 {
-    margin-top: 1rem;
-    color: white;
+    @apply text-white mt-4;
+  }
+
+  h3 {
+    @apply text-2xl font-medium;
+  }
+
+  h5 {
+    @apply font-medium mt-1;
   }
 
   li.title {
@@ -27,135 +29,55 @@ body:has(a[href*="/"]):has(.home) {
 
   @container (min-width: #{$container-width}) {
     li.title h2 {
-      font-size: 2.8rem;
+      @apply text-4xl; //font-size: 2.8rem;
     }
   }
 
   main {
-    background: no-repeat url("/src/assets/images/chef-cooking.png");
-    background-color: black;
-    background-position: center;
-    background-size: cover;
+    @apply bg-center bg-black bg-cover bg-no-repeat bg-[url("/src/assets/images/chef-cooking.png")];
 
     .home {
-      color: white;
+      @apply text-white;
 
       li {
-        float: left;
-        min-width: 200px;
-        list-style-type: none;
+        @apply float-left list-none min-w-48; //min-w-48 192px aprox 200px
 
         &.title {
-          background: none;
+          @apply bg-none;
         }
       }
 
       .my-card {
-        width: 300px;
-        padding: 10px;
-        margin: 10px;
-        background: rgb(255 255 255 / 0.1);
-        border-radius: 5px;
+        @apply w-72 p-2.5 m-2.5 bg-gray-900/[0.5] rounded-md;//aprox w-72 288px ~300px
       }
     }
   }
 
-  @supports not (display: grid) {
-    @media (max-width: $tabletMinWidth) {
-      .grid {
-        display: flex;
-        flex-direction: column;
-      }
-      .title {
-        justify-content: center;
-      }
-    }
-
-    @media (min-width: $tabletMinWidth) {
-      .flex-container {
-        display: flex;
-        flex-direction: column;
-        height: fit-content;
-      }
-
-      .flex-row {
-        display: flex;
-        flex: 1;
-
-        align-items: center;
-        &__center {
-          display: flex;
-          flex: 1;
-          justify-content: center;
-          text-align: center;
-        }
-
-        &__right {
-          display: flex;
-          flex: 1;
-          justify-content: flex-end;
-          margin-right: calc(10vw);
-        }
-
-        &__left {
-          display: flex;
-          flex: 1;
-          justify-content: flex-start;
-          margin-left: calc(10vw);
-        }
-      }
-
-      .flex-center {
-        justify-content: center;
-        text-align: center;
-      }
-
-      .flex-left {
-        justify-content: flex-start;
-        width: 300px;
-      }
-
-      .flex-right {
-        justify-content: flex-end;
-        width: 300px;
-      }
+  @media (max-width: $tabletMinWidth) {
+    .my-grid {
+      @apply grid auto-rows-auto;
     }
   }
 
-  @supports (display: grid) {
-    @media (max-width: $tabletMinWidth) {
-      .grid {
-        display: grid;
-        grid-auto-rows: auto;
-      }
+  @media (min-width: $tabletMinWidth) {
+    .my-grid {
+      @apply grid grid-rows-5 grid-cols-5;
     }
 
-    @media (min-width: $tabletMinWidth) {
-      .grid {
-        display: grid;
-        grid-template-rows: 4rem 1fr 1fr 1fr 1fr;
-        grid-template-columns: repeat(5, minmax(100px, 1fr));
-      }
+    .title {
+      @apply row-start-1 row-end-2 col-start-3 col-end-5;
+    }
 
-      .title {
-        grid-row: 1 / 2;
-        grid-column: 3 / 5;
-      }
+    .first-prize {
+      @apply row-start-2 row-end-3 col-start-2 col-end-3;
+    }
 
-      .first-prize {
-        grid-row: 2 / 3;
-        grid-column: 2 / 3;
-      }
+    .second-prize {
+      @apply row-start-4 row-end-5 col-start-1 col-end-2;
+    }
 
-      .second-prize {
-        grid-row: 4 / 5;
-        grid-column: 1 / 2;
-      }
-
-      .third-prize {
-        grid-row: 3 / 4;
-        grid-column: 4 / 5;
-      }
+    .third-prize {
+      @apply row-start-3 row-end-4 col-start-4 col-end-5;
     }
   }
 }
