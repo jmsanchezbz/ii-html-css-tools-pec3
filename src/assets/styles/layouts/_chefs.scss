@@ -4,11 +4,6 @@ body:has(a[href*="chefs.html"]):has(.chef) {
   }
 }
 
-/*display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;*/
-
 .chef {
   @apply flex flex-col justify-center text-center;
 
@@ -40,7 +35,6 @@ body:has(a[href*="chefs.html"]):has(.chef) {
 
       &__image {
         @apply object-cover object-top w-full h-80;
-        /*height: 300px;*/
       }
 
       &__body {
@@ -55,17 +49,8 @@ body:has(a[href*="chefs.html"]):has(.chef) {
 
     &:hover {
       @apply shadow-md border-2 border-stone-300;
-      /*border-color: generate-shade($bg-accent-color, 90%);
-      border-width: 3px;*/
     }
   }
-
-  /*font-size: 2rem;*/ /*
-  @container (min-width: #{$container-width}) {
-    article h5 {
-      @apply text-2xl;
-    }
-  }*/
 
   @media (min-width: $tabletMinWidth) {
     .flex-container {
@@ -73,18 +58,19 @@ body:has(a[href*="chefs.html"]):has(.chef) {
 
       .my-card {
         @apply w-2/5 m-5 h-full;
-        /*height: 400px;
-        margin: 20px;*/
       }
+    }
+
+    h5 {
+      @apply text-3xl;
     }
   }
 
   @media (min-width: $desktopMinWidth) {
     .flex-container {
       .my-card {
-        @apply m-5 w-1/4 h-full;
-        /*height: 400px;*/
-        width: 30%;
+        @apply m-5 h-full;
+        width: 30%; //Tailwind no perite obtener un ancho de 30% por lo que se define explicitamente
       }
     }
   }
